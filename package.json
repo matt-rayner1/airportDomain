@@ -1,5 +1,5 @@
 {
-  "name": "airportDomain",
+  "name": "airportdomain",
   "version": "1.0.0",
   "description": "An airport system using OOP/classes/objects",
   "main": "airport.js",
