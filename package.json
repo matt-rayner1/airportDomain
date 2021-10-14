@@ -1,0 +1,24 @@
+{
+  "name": "airportDomain",
+  "version": "1.0.0",
+  "description": "An airport system using OOP/classes/objects",
+  "main": "airport.js",
+  "scripts": {
+    "test": "jest",
+    "test:report": "jest --coverage=true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matt-rayner1/airportDomain.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matt-rayner1/airportDomain/issues"
+  },
+  "homepage": "https://github.com/matt-rayner1/airportDomain#readme",
+  "dependencies": {
+    "jest": "^27.2.5"
+  }
+}
