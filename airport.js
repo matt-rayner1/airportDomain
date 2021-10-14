@@ -15,10 +15,22 @@ class Passenger {
 class Bag {
     constructor(weight) {
         this.weight = weight;
+
+        this.checkDefined = function() {
+            if(this.weight === undefined) {
+                throw new Error('bag must have a weight');
+            }
+        }
+        this.checkDefined()
     }
 
     isOverLimit() {
-        //todo
+        if(this.weight >= 15) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
 
@@ -45,3 +57,5 @@ class Airport {
         this.name = name;
     }
 }
+
+module.exports = {Passenger, Bag}
