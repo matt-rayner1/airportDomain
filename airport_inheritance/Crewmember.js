@@ -1,3 +1,5 @@
+const Person = require('./Person.js')
+
 class CrewMember extends Person {
     constructor(name, position, staffNumber) {
         super(name);

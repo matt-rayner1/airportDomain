@@ -1,4 +1,3 @@
-const { TestWatcher } = require('@jest/core');
 const {Plane, Airport} = require('./airport.js');
 
 //create test plane
