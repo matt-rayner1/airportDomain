@@ -63,6 +63,7 @@ describe('Plane boarding tests', () => {
     const john = new Passenger('John', 'Passport789', '6A');
     const debra = new CrewMember('Debra', 'Front', 123);
     const denise = new CrewMember('Denise', 'Back', 456);
+    const debby = new CrewMember('Debby', 'Center', 789);
     boeing.board(matt)
     boeing.board(mike)
     boeing.assign(debra)
@@ -77,6 +78,7 @@ describe('Plane boarding tests', () => {
     test('Passenger 2 should be called Mike', () => {
         expect(boeing.passengers[1].name).toBe('Mike')
     })
+
     test('Plane should have 2 crewmembers on board', () => {
         expect(boeing.crewMembers.length).toBe(2);
     })
@@ -86,8 +88,28 @@ describe('Plane boarding tests', () => {
     test('Crew Member 2 should be called denise', () => {
         expect(boeing.crewMembers[1].name).toBe('Denise')
     })
+
+    test('Unboarding a passenger should update passenger list', () => {
+        boeing.unBoard(matt);
+        expect(boeing.passengers.length).toBe(1);
+    })
+    test('Unboarding a Crew Member should update crew member list', () => {
+        boeing.unAssign(debra);
+        expect(boeing.crewMembers.length).toBe(1);
+    })
+
     test('Unboarding a passenger who isnt there should throw error', () => {
         expect(() => boeing.unBoard(john)).toThrowError('Passenger was not present in plane')
+    })
+    test('Unassigning a crew member who isnt there should throw error', () => {
+        expect(() => boeing.unAssign(debby)).toThrowError('Crew Member was not present in plane')
+    })
+
+    test('listPassengers() should return Object of passengers', () => {
+        expect(typeof boeing.listPassengers()).toBe('object')
+    })
+    test('listCrewMembers() should return Object of crew members', () =>{
+        expect(typeof boeing.listCrewMembers()).toBe('object')
     })
 })
 
@@ -97,6 +119,9 @@ describe('Airport + plane takeoff/land tests', () =>{
     const boeing = new Plane('Boeing');
     lax.land(boeing);
 
+    test('Airport class should list which objects have been created', () => {
+        expect(Airport.getAllAirports().length).toBe(2);
+    })
     test('Boeing airplane should start in lax', () => {
         expect(lax.planes[0].type).toBe('Boeing')
     })
