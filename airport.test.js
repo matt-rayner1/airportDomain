@@ -95,10 +95,4 @@ describe('Airport tests', () => {
     test('Airport should have name which is string', () => {
         expect(typeof heathrow.name).toBe('string');
     })
-    test('Airport takeoff message should be: Plane Boeing 737 succeffully took off from Heathrow', () => {
-        expect(takeOffString).toBe('Plane Boeing 737 successfully took off from Heathrow')
-    })
-    test('Airport landing message should be: Plane Boeing 737 succeffully landed in Heathrow', () => {
-        expect(landString).toBe('Plane Boeing 737 successfully landed in Heathrow')
-    })
 })
