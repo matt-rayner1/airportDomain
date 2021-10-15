@@ -22,6 +22,6 @@ test('Airport LAX should contain boeing object after plane lands', () => {
 
 //check correct error when trying to takeOff a plane that isnt in list
 test('Airport LHR should throw error if plane tries to takeoff that isnt there', () => {
-    expect( lhr.takeOff(boeing) ).toThrowError('Plane was not present in airport');
+    expect( () => lhr.takeOff(boeing) ).toThrowError('Plane was not present in airport');
 })
 
